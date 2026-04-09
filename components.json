@@ -1,0 +1,123 @@
+{
+  "components": {
+    "esp32": {
+      "name": "ESP32",
+      "description": "Dual-core Wi-Fi and Bluetooth microcontroller",
+      "voltage": 3.3,
+      "pins": {
+        "VCC":  { "type": "power",  "role": "vcc" },
+        "GND":  { "type": "power",  "role": "gnd" },
+        "TX0":  { "type": "uart",   "role": "tx",  "bus": "UART0" },
+        "RX0":  { "type": "uart",   "role": "rx",  "bus": "UART0" },
+        "TX2":  { "type": "uart",   "role": "tx",  "bus": "UART2" },
+        "RX2":  { "type": "uart",   "role": "rx",  "bus": "UART2" },
+        "SDA":  { "type": "i2c",    "role": "sda", "bus": "I2C0" },
+        "SCL":  { "type": "i2c",    "role": "scl", "bus": "I2C0" },
+        "MOSI": { "type": "spi",    "role": "mosi","bus": "SPI2" },
+        "MISO": { "type": "spi",    "role": "miso","bus": "SPI2" },
+        "SCK":  { "type": "spi",    "role": "sck", "bus": "SPI2" },
+        "CS":   { "type": "spi",    "role": "cs",  "bus": "SPI2" },
+        "GPIO2":{ "type": "gpio",   "role": "io" },
+        "GPIO4":{ "type": "gpio",   "role": "io" }
+      },
+      "protocols": ["UART", "I2C", "SPI", "GPIO"]
+    },
+    "gps": {
+      "name": "GPS Module (NEO-6M)",
+      "description": "UART-based GPS receiver module",
+      "voltage": 3.3,
+      "pins": {
+        "VCC": { "type": "power", "role": "vcc" },
+        "GND": { "type": "power", "role": "gnd" },
+        "TX":  { "type": "uart",  "role": "tx", "bus": "UART0" },
+        "RX":  { "type": "uart",  "role": "rx", "bus": "UART0" }
+      },
+      "protocols": ["UART"]
+    },
+    "buzzer": {
+      "name": "Buzzer",
+      "description": "Passive or active piezoelectric buzzer",
+      "voltage": 3.3,
+      "pins": {
+        "VCC": { "type": "power", "role": "vcc" },
+        "GND": { "type": "power", "role": "gnd" },
+        "SIG": { "type": "gpio",  "role": "io" }
+      },
+      "protocols": ["GPIO"]
+    },
+    "oled": {
+      "name": "OLED Display (SSD1306)",
+      "description": "128x64 monochrome OLED display over I2C",
+      "voltage": 3.3,
+      "pins": {
+        "VCC": { "type": "power", "role": "vcc" },
+        "GND": { "type": "power", "role": "gnd" },
+        "SDA": { "type": "i2c",   "role": "sda", "bus": "I2C0" },
+        "SCL": { "type": "i2c",   "role": "scl", "bus": "I2C0" }
+      },
+      "protocols": ["I2C"]
+    },
+    "bme280": {
+      "name": "BME280 Temperature/Humidity/Pressure Sensor",
+      "description": "Environmental sensor with I2C and SPI support",
+      "voltage": 3.3,
+      "pins": {
+        "VCC":  { "type": "power", "role": "vcc" },
+        "GND":  { "type": "power", "role": "gnd" },
+        "SDA":  { "type": "i2c",   "role": "sda", "bus": "I2C0" },
+        "SCL":  { "type": "i2c",   "role": "scl", "bus": "I2C0" },
+        "MOSI": { "type": "spi",   "role": "mosi","bus": "SPI2" },
+        "MISO": { "type": "spi",   "role": "miso","bus": "SPI2" },
+        "SCK":  { "type": "spi",   "role": "sck", "bus": "SPI2" },
+        "CS":   { "type": "spi",   "role": "cs",  "bus": "SPI2" }
+      },
+      "protocols": ["I2C", "SPI"]
+    },
+    "mpu6050": {
+      "name": "MPU-6050 IMU",
+      "description": "6-axis accelerometer and gyroscope over I2C",
+      "voltage": 3.3,
+      "pins": {
+        "VCC": { "type": "power", "role": "vcc" },
+        "GND": { "type": "power", "role": "gnd" },
+        "SDA": { "type": "i2c",   "role": "sda", "bus": "I2C0" },
+        "SCL": { "type": "i2c",   "role": "scl", "bus": "I2C0" }
+      },
+      "protocols": ["I2C"]
+    },
+    "sd_card": {
+      "name": "SD Card Module",
+      "description": "SPI-based micro SD card reader/writer",
+      "voltage": 3.3,
+      "pins": {
+        "VCC":  { "type": "power", "role": "vcc" },
+        "GND":  { "type": "power", "role": "gnd" },
+        "MOSI": { "type": "spi",   "role": "mosi","bus": "SPI2" },
+        "MISO": { "type": "spi",   "role": "miso","bus": "SPI2" },
+        "SCK":  { "type": "spi",   "role": "sck", "bus": "SPI2" },
+        "CS":   { "type": "spi",   "role": "cs",  "bus": "SPI2" }
+      },
+      "protocols": ["SPI"]
+    },
+    "led": {
+      "name": "LED",
+      "description": "Simple LED (requires current-limiting resistor)",
+      "voltage": 3.3,
+      "pins": {
+        "ANODE":   { "type": "gpio",  "role": "io" },
+        "CATHODE": { "type": "power", "role": "gnd" }
+      },
+      "protocols": ["GPIO"]
+    },
+    "resistor": {
+      "name": "Resistor",
+      "description": "Current-limiting or general-purpose passive resistor",
+      "voltage": 3.3,
+      "pins": {
+        "PIN1": { "type": "gpio", "role": "io" },
+        "PIN2": { "type": "gpio", "role": "io" }
+      },
+      "protocols": ["GPIO"]
+    }
+  }
+}
