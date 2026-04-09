@@ -108,6 +108,16 @@
         "CATHODE": { "type": "power", "role": "gnd" }
       },
       "protocols": ["GPIO"]
+    },
+    "resistor": {
+      "name": "Resistor",
+      "description": "Current-limiting or general-purpose passive resistor",
+      "voltage": 3.3,
+      "pins": {
+        "PIN1": { "type": "gpio", "role": "io" },
+        "PIN2": { "type": "gpio", "role": "io" }
+      },
+      "protocols": ["GPIO"]
     }
   }
 }

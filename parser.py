@@ -29,8 +29,9 @@ class ParseResult(NamedTuple):
 # Normalisation helpers
 # ---------------------------------------------------------------------------
 
-# Words filtered out before looking up a token (articles, common fillers)
-_STOP_WORDS: set[str] = {"a", "an", "the", "with", "using", "module", "sensor"}
+# Words filtered out before looking up a token (articles and common fillers
+# that appear *around* component names, not as part of them)
+_STOP_WORDS: set[str] = {"a", "an", "the", "with", "using"}
 
 # Simple alias table: maps alternative names to DB keys
 _ALIASES: dict[str, str] = {
